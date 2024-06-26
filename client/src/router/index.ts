@@ -80,6 +80,26 @@ const router = createRouter({
               component: () => import("@/views/modules/backend/role/edit.vue")
             }
           ]
+        },
+        {
+          path: 'categories',
+          children: [
+            {
+              path: '',
+              name: 'admin.categories.index',
+              component: () => import("@/views/modules/backend/category/index.vue")
+            },
+            {
+              path: 'create',
+              name: 'admin.categories.create',
+              component: () => import("@/views/modules/backend/category/create.vue")
+            },
+            {
+              path: ':id/edit',
+              name: 'admin.categories.edit',
+              component: () => import("@/views/modules/backend/category/edit.vue")
+            }
+          ]
         }
       ]
     }
